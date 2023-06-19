@@ -3,9 +3,21 @@ const app = express()
 const PORT = 8000
 
 const jsonObj = {
-    'name': 'Lucy',
-    'city': 'new york'
+    'person1': {
+        'name': 'Lucy',
+        'city': 'New york'
+    },
+    'person2': {
+        'name': 'John',
+        'city': 'Dallas'
+    },
+    'person3': {
+        'name': 'Peter',
+        'city': 'Los angeles'
+    }
+    
 }
+    
 
 app.get('/', (req, response)=>{
     response.sendFile(__dirname + '/index.html')
