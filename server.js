@@ -25,15 +25,17 @@ const jsonObj = {
     
 }
     
-
+//get request default path to the html file
 app.get('/', (req, response)=>{
     response.sendFile(__dirname + '/index.html')
 })
 
+//get request for the api
 app.get('/api/', (req, response)=>{
     response.json(jsonObj)
 })
 
+//get request for single item from the api with a query parameter
 app.get('/api/:person', (req, response)=>{
     const person = req.params.person.toLowerCase()
     if(jsonObj[person]){
@@ -44,6 +46,7 @@ app.get('/api/:person', (req, response)=>{
     }
 })
 
+//listen to heroku port or local port
 app.listen(process.env.PORT || PORT, ()=>{
     console.log(`the server is running on ${PORT}`)
 })
