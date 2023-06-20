@@ -41,6 +41,6 @@ app.get('/api/:person', (req, response)=>{
     }
 })
 
-app.listen(PORT, ()=>{
+app.listen(process.env.PORT || PORT, ()=>{
     console.log(`the server is running on ${PORT}`)
 })
